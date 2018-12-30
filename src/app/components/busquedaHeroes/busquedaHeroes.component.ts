@@ -23,6 +23,7 @@ export class BusquedaHeroeComponent implements OnInit  {
   ngOnInit() {
     this._activatedRoute.params.subscribe ((params) => {
         this.busqueda = params['busqueda'];
+        console.log(this.busqueda);
         this.buscarHeroe(this.busqueda);
       });
   }
