@@ -75,4 +75,21 @@ export class HeroesService {
         return this.heroes[i];
     }
 
+    buscarHeroes(busqueda: string): HeroeModel[] {
+      let heroesArr: HeroeModel[] = [];
+
+      busqueda = busqueda.toLowerCase();
+
+      for (let heroe of this.heroes ) {
+        let nombre = heroe.nombre.toLocaleLowerCase();
+
+        if (nombre.lastIndexOf(busqueda) >= 0) {
+            heroesArr.push(heroe);
+        }
+      }
+
+      return heroesArr;
+
+    }
+
 }
